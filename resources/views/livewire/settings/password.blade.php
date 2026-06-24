@@ -30,7 +30,7 @@
                 </div>
 
                 <x-action-message class="me-3" on="password-updated">
-                    {{ __('Guardado.') }}
+                    {{ __('Contraseña actualizada.') }}
                 </x-action-message>
             </div>
         </form>

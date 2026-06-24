@@ -33,7 +33,7 @@
                 </div>
 
                 <x-action-message class="me-3" on="profile-updated">
-                    {{ __('Guardado.') }}
+                    {{ __('Perfil actualizado.') }}
                 </x-action-message>
             </div>
         </form>
