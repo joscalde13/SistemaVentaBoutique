@@ -61,6 +61,96 @@ select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
 
+html.dark body.app-shell {
+    background-color: var(--color-zinc-900);
+    color: var(--color-zinc-100);
+}
+
+html.dark body.app-shell .bg-white {
+    background-color: var(--color-zinc-800);
+}
+
+html.dark body.app-shell .bg-zinc-50 {
+    background-color: var(--color-zinc-900);
+}
+
+html.dark body.app-shell .bg-zinc-100 {
+    background-color: var(--color-zinc-800);
+}
+
+html.dark body.app-shell .text-zinc-900 {
+    color: var(--color-zinc-100);
+}
+
+html.dark body.app-shell .text-zinc-800 {
+    color: var(--color-zinc-200);
+}
+
+html.dark body.app-shell .text-zinc-700 {
+    color: var(--color-zinc-300);
+}
+
+html.dark body.app-shell .text-zinc-600,
+html.dark body.app-shell .text-zinc-500 {
+    color: var(--color-zinc-400);
+}
+
+html.dark body.app-shell .text-zinc-400 {
+    color: var(--color-zinc-500);
+}
+
+html.dark body.app-shell .border-zinc-100,
+html.dark body.app-shell .border-zinc-200,
+html.dark body.app-shell .divide-zinc-100 {
+    border-color: var(--color-zinc-700);
+}
+
+html.dark body.app-shell .border-zinc-300,
+html.dark body.app-shell .border-zinc-900 {
+    border-color: var(--color-zinc-600);
+}
+
+html.dark body.app-shell .bg-amber-50 {
+    background-color: #451a03;
+}
+
+html.dark body.app-shell .text-amber-700,
+html.dark body.app-shell .text-amber-800,
+html.dark body.app-shell .text-amber-900 {
+    color: #fcd34d;
+}
+
+html.dark body.app-shell .bg-emerald-50 {
+    background-color: #052e16;
+}
+
+html.dark body.app-shell .border-emerald-200 {
+    border-color: #065f46;
+}
+
+html.dark body.app-shell .text-emerald-700,
+html.dark body.app-shell .text-emerald-800 {
+    color: #6ee7b7;
+}
+
+html.dark body.app-shell .bg-red-50 {
+    background-color: #450a0a;
+}
+
+html.dark body.app-shell .border-red-200 {
+    border-color: #7f1d1d;
+}
+
+html.dark body.app-shell .text-red-600,
+html.dark body.app-shell .text-red-700,
+html.dark body.app-shell .text-red-800 {
+    color: #fca5a5;
+}
+
+html.dark body.app-shell [class~="hover:bg-zinc-50/70"]:hover {
+    background-color: rgb(63 63 70 / 0.4);
+}
+
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */

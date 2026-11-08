@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
+    <body class="app-shell min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
+        <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
             <a href="{{ route('home') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
@@ -14,13 +14,20 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Menú de navegación')" class="grid">
-                    <flux:navlist.item :href="route('dashboard')" :active="request()->routeIs('dashboard')" icon="home" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('dashboard')" :active="request()->routeIs('dashboard')" icon="home" wire:navigate>{{ __('Metricas') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('products.index')" :active="request()->routeIs('products.*')" icon="archive-box">{{ __('Inventario / Prendas') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('categories.index')" :active="request()->routeIs('categories.*')" icon="squares-2x2">{{ __('Categorías') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('sales.create')" :active="request()->routeIs('sales.create')" icon="shopping-cart">{{ __('Registrar venta') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('inventory.index')" :active="request()->routeIs('inventory.*')" icon="arrows-right-left">{{ __('Movimientos') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('sales.index')" :active="request()->routeIs('sales.index', 'sales.show', 'sales.receipt')" icon="receipt-percent">{{ __('Historial de ventas') }}</flux:navlist.item>
+                    <flux:navlist.item :href="route('reports.index')" :active="request()->routeIs('reports.*')" icon="chart-bar">{{ __('Reportes') }}</flux:navlist.item>
                     
+                    
+                   
                 </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
-
 
             <!-- Desktop User Menu -->
             <flux:dropdown class="hidden lg:block" position="bottom" align="start">
@@ -69,7 +76,7 @@
         </flux:sidebar>
 
         <!-- Mobile User Menu -->
-        <flux:header class="lg:hidden">
+        <flux:header class="sticky top-0 z-30 border-b border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900 lg:hidden">
             <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
             <flux:spacer />

@@ -1,10 +1,12 @@
 <div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Crear una cuenta')" :description="__('Ingresa tus datos a continuación para crear tu cuenta')" />
+    <div class="space-y-1 text-center">
+        <h1 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ __('Crear cuenta') }}</h1>
+    </div>
 
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form method="POST" wire:submit="register" class="flex flex-col gap-6">
+    <form method="POST" wire:submit="register" class="flex flex-col gap-4">
         <!-- Name -->
         <flux:input
             wire:model="name"
@@ -49,14 +51,13 @@
         />
 
         <div class="flex items-center justify-end">
-            <flux:button type="submit" variant="primary" class="w-full">
+            <flux:button type="submit" variant="primary" class="w-full !rounded-lg !font-medium">
                 {{ __('Crear cuenta') }}
             </flux:button>
         </div>
     </form>
 
-    <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
-        <span>{{ __('¿Ya tienes una cuenta?') }}</span>
+    <div class="border-t border-zinc-100 pt-4 text-center text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
         <flux:link :href="route('login')" wire:navigate>{{ __('Iniciar sesión') }}</flux:link>
     </div>
 </div>
